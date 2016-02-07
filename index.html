@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html ng-app="clocery">
+
+<head>
+    <title>Clocery</title>
+
+    <link type="text/css" rel="stylesheet" href="extResources/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="extResources/css/font-awesome.min.css" />
+    <link type="text/css" rel="stylesheet" href="appResources/css/site.css" />
+
+    <script type="text/javascript" src="extResources/js/angular/angular.min.js"></script>
+    <script type="text/javascript" src="appResources/js/site.js"></script>
+</head>
+
+<body ng-controller="DefaultController">
+    <div class="custom-nav-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="brand">
+                        <a class="navbar-brand hand"><i class="fa fa-bars" ng-click="openSideBar()"></i>Clocery</a>
+                    </div>
+                </div>
+
+                <div class="col-xs-6">
+                    <div class="pull-right">
+                        <ul class="nav-icon">
+                            <li><i class="fa fa-fw fa-search"></i></li>
+                            <li><i class="fa fa-fw fa-shopping-cart"></i></li>
+                            <li><i class="fa fa-fw fa-user"></i></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="banner-container">
+                    <div class="three-banners">
+                        <div class="banner" ng-repeat="banner in banners">
+                            <img src="{{banner.url}}" class="img-responsive" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="items-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="section-heading">
+                        Frequent Products
+                    </div>
+                </div>
+                <div class="col-xss-12 col-xs-6 col-sm-6 col-md-3" ng-repeat="product in frequentProducts">
+
+                    <div class="product-info-container">
+
+                        <div class="image-container">
+                            <img src="{{product.url}}" class="img-responsive" />
+                        </div>
+
+
+                        <div class="product-info">
+                            <div class="row">
+                                <div class="col-xs-8">
+                                    <div class="product-name" ng-bind="product.title"></div>
+                                </div>
+
+                                <div class="col-xs-4">
+                                    <div class="product-cost">
+                                        <i class="fa fa-rupee"></i> {{ product.cost}}
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12">
+                                    <div class="product-description" ng-bind="product.description"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="action-container">
+                            <div class="action">
+                                <button type="button" class="btn btn-default btn-block btn-lg">
+                                    <i class="fa fa-shopping-cart"></i>Add to Cart
+                                </button>
+                            </div>
+                            <div class="action">
+                                <button type="button" class="btn btn-primary btn-block btn-lg">
+                                    <i class="fa  fa-arrow-circle-down"></i> Buy Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="items-container">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="section-heading">
+                        Weekly Products
+                    </div>
+                </div>
+
+                <div class="col-xss-12 col-xs-6 col-sm-6 col-md-3" ng-repeat="product in weeklyProducts">
+                    <div class="product-info-container">
+
+                        <div class="image-container">
+                            <img src="{{product.url}}" class="img-responsive" />
+                        </div>
+
+
+                        <div class="product-info">
+                            <div class="row">
+                                <div class="col-xs-8">
+                                    <div class="product-name" ng-bind="product.title"></div>
+                                </div>
+
+                                <div class="col-xs-4">
+                                    <div class="product-cost">
+                                        <i class="fa fa-rupee"></i> {{ product.cost}}
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12">
+                                    <div class="product-description" ng-bind="product.description"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="action-container">
+                            <div class="action">
+                                <button type="button" class="btn btn-default btn-block btn-lg">
+                                    <i class="fa fa-shopping-cart"></i>Add to Cart
+                                </button>
+                            </div>
+                            <div class="action">
+                                <button type="button" class="btn btn-primary btn-block btn-lg">
+                                    <i class="fa  fa-arrow-circle-down"></i> Buy Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-4">
+                <div class="info-container">
+                    <div class="info-image">
+                        <i class="fa fa-fw fa-support"></i>
+                    </div>
+
+                    <div class="info-title">
+                        5 STAR SUPPORT
+                    </div>
+
+                    <div class="info-text">
+                        You will get best support from our team. Fresh and best quality product will be delivered at your doorstep. We will try our best to deliver your order as soon as possible.
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-4">
+                <div class="info-container">
+                    <div class="info-image">
+                        <i class="fa fa-fw fa-truck"></i>
+                    </div>
+
+                    <div class="info-title">
+                        FREE SHIPPING
+                    </div>
+
+                    <div class="info-text">
+                        That’s right Clocery does not charge any shipping on any of your orders. No minimum order size.
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-4">
+                <div class="info-container">
+                    <div class="info-image">
+                        <i class="fa fa-fw fa-rupee"></i>
+                    </div>
+
+                    <div class="info-title">
+                        BUY IN SINGLE CLICK
+                    </div>
+
+                    <div class="info-text">
+                        Just in one click you can buy your item. No registration and lengthy form submission required to order your product. Just give your address and relax. Your part is done, now wait for us to serve you in the best possible way.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="custom-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-3">
+
+                    <div class="footer-heading">Quick Links</div>
+
+                    <ul class="footer-ul">
+                        <li><a href="#">Diary Milk</a></li>
+                        <li><a href="#">Mumbai</a></li>
+                        <li><a href="#">Navi Mumbai</a></li>
+                    </ul>
+
+                </div>
+
+                <div class="col-xs-12 col-sm-3">
+                    <div class="footer-heading">Company Links</div>
+
+                    <ul class="footer-ul">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Terms and Conditions</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-xs-12 col-sm-3">
+                    <div class="footer-heading">Subscribe to Clocery</div>
+
+                    <p>Get the Latest news and refreshing updates delivered to your inbox</p>
+
+                    <div class="input-group">
+                        <input type="text" class="form-control">
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" type="button">Subscribe</button>
+                            </span>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-3">
+                    <div class="footer-heading">Contact Us</div>
+
+                    <ul class="fa-ul">
+                        <li><i class="fa-li fa-fw fa  fa-mobile-phone"></i>+91 7080488690</li>
+                        <li><i class="fa-li fa-fw fa fa-whatsapp"></i>+91 7080488690</li>
+                        <li><i class="fa-li fa-fw fa fa-envelope-o"></i>support@clocery.com</li>
+                        <li><i class="fa-li fa-fw fa fa-map-marker"></i>Lucknow</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="copyright-info">
+        Copyright © 2016 Clocery. All Rights Reserved.
+    </div>
+</body>
+
+</html>
